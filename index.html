@@ -51,17 +51,64 @@
         h2 {
             color: #2980b9;
         }
-        .image-container {
+
+        /* Card Styles for Image Containers */
+        .card {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: #474dc3;
+            border-radius: 10px;
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            perspective: 1000px;
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin: 10px;
         }
-        .image-container img {
-            width: 400px;  /* Set width to 400px */
-            height: 400px; /* Set height to 400px */
+        .card img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             border-radius: 8px;
-            margin: 10px;
+        }
+        .card__content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #474dc3;
+            transform: rotateX(-90deg);
+            transform-origin: bottom;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px #000000;
+        }
+
+        .card:hover .card__content {
+            transform: rotateX(0deg);
+        }
+
+        .card__title {
+            margin: 0;
+            padding-left: 5px;
+            font-size: 24px;
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .card__description {
+            margin: 10px 0 0;
+            font-size: 14px;
+            color: #ffffff;
+            line-height: 1.4;
         }
     </style>
 </head>
@@ -85,18 +132,38 @@
         <p>Filipino mythology is rich with gods and goddesses, each with unique powers and roles. Here are some of the most significant ones:</p>
         
         <div class="image-container">
-            <img src="axel pic/axel.jpg" alt="Bathala">
-            <img src="axel pic/francis pic.jpg" alt="Mayari">
-            <img src="axel pic/toyo.jpg" alt="Lakapati">
-            <img src="axel pic/apung iru.jpg" alt="Apung Iru">
-        </div>
+            <div class="card">
+                <img src="pictures/bathala.jpg" alt="Bathala">
+                <div class="card__content">
+                    <p class="card__title">Bathala</p>
+                    <p class="card__description">The supreme god in Tagalog mythology, creator of the world and ruler of the heavens.</p>
+                </div>
+            </div>
 
-        <ul>
-            <li><strong>Bathala</strong> – The supreme god in Tagalog mythology, creator of the world and ruler of the heavens.</li>
-            <li><strong>Mayari</strong> – The goddess of the moon, daughter of Bathala, and known for her beauty and strength.</li>
-            <li><strong>Lakapati</strong> – The goddess of fertility and abundance, widely worshipped by Filipino farmers.</li>
-            <li><strong>Apung Iru</strong> – A supreme deity in Kapampangan mythology, said to govern both the heavens and earth.</li>
-        </ul>
+            <div class="card">
+                <img src="pictures/mayari.jpg" alt="Mayari">
+                <div class="card__content">
+                    <p class="card__title">Mayari</p>
+                    <p class="card__description">The goddess of the moon, daughter of Bathala, and known for her beauty and strength.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="pictures/lakapati.webp" alt="Lakapati">
+                <div class="card__content">
+                    <p class="card__title">Lakapati</p>
+                    <p class="card__description">The goddess of fertility and abundance, widely worshipped by Filipino farmers.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="pictures/apung iru.jpg" alt="Apung Iru">
+                <div class="card__content">
+                    <p class="card__title">Apung Iru</p>
+                    <p class="card__description">A supreme deity in Kapampangan mythology, said to govern both the heavens and earth.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="creatures">
@@ -104,16 +171,30 @@
         <p>Filipino folklore is filled with fascinating creatures, often both terrifying and enchanting. Some of the most popular include:</p>
         
         <div class="image-container">
-            <img src="axel pic/jerjer.jpg" alt="Aswang">
-            <img src="axel pic/kapre.webp" alt="Kapre">
-            <img src="axel pic/mananangal.jpg" alt="Manananggal">
-        </div>
+            <div class="card">
+                <img src="pictures/davad.jpg" alt="Aswang">
+                <div class="card__content">
+                    <p class="card__title">Aswang</p>
+                    <p class="card__description">A shape-shifting monster known for its ability to suck blood, often associated with witches and vampires.</p>
+                </div>
+            </div>
 
-        <ul>
-            <li><strong>Aswang</strong> – A shape-shifting monster known for its ability to suck blood, often associated with witches and vampires.</li>
-            <li><strong>Kapre</strong> – A large, tree-dwelling creature that smokes cigars and is known for its mischievous ways.</li>
-            <li><strong>Manananggal</strong> – A creature with the ability to separate its upper body from its lower half, usually depicted as a woman who flies at night to prey on victims.</li>
-        </ul>
+            <div class="card">
+                <img src="pictures/kapre.jpg" alt="Kapre">
+                <div class="card__content">
+                    <p class="card__title">Kapre</p>
+                    <p class="card__description">A large, tree-dwelling creature that smokes cigars and is known for its mischievous ways.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="pictures/manananggal.webp" alt="Manananggal">
+                <div class="card__content">
+                    <p class="card__title">Manananggal</p>
+                    <p class="card__description">A creature with the ability to separate its upper body from its lower half, usually depicted as a woman who flies at night to prey on victims.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="legends">
@@ -121,16 +202,22 @@
         <p>Many Filipino myths and legends explain the origins of the islands, the people, and their customs. Here are a few famous ones:</p>
         
         <div class="image-container">
-            <img src="axel pic/maria makiling.webp" alt="Maria Makiling">
-            <img src="axel pic/pinya.webp" alt="Pineapple Legend">
-        </div>
+            <div class="card">
+                <img src="pictures/maria makiling.webp" alt="Maria Makiling">
+                <div class="card__content">
+                    <p class="card__title">Maria Makiling</p>
+                    <p class="card__description">A famous story about a beautiful diwata (fairy) who lived in the mountains of Laguna. She is known to protect the people of the region.</p>
+                </div>
+            </div>
 
-        <ul>
-            <li><strong>The Legend of Maria Makiling</strong> – A famous story about a beautiful diwata (fairy) who lived in the mountains of Laguna. She is known to protect the people of the region.</li>
-            <li><strong>The Legend of the Pineapple</strong> – A folktale explaining how the pineapple fruit got its appearance, stemming from a daughter's disobedience and a mother's curse.</li>
-            <li><strong>The Legend of the Mango</strong> – A popular tale about the origin of the mango tree, which was believed to have been blessed by the gods.</li>
-            <li><strong>The Epic of Biag ni Lam-ang</strong> – A well-known Ilocano epic about a heroic figure named Lam-ang who performed many feats and conquered great dangers.</li>
-        </ul>
+            <div class="card">
+                <img src="pictures/pineapple legends.jpg" alt="Pineapple Legend">
+                <div class="card__content">
+                    <p class="card__title">Pineapple Legend</p>
+                    <p class="card__description">A folktale explaining how the pineapple fruit got its appearance, stemming from a daughter's disobedience and a mother's curse.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="about">
