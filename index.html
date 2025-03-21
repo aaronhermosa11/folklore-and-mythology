@@ -53,9 +53,16 @@
         }
 
         /* Card Styles for Image Containers */
+        .image-container {
+            display: flex;
+            justify-content: space-between; /* Distribute the cards across left, center, and right */
+            gap: 20px; /* Space between cards */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
         .card {
             position: relative;
-            width: 400px;
+            width: 30%; /* Adjust width to fit three cards per row */
+            min-width: 300px; /* Ensure cards don't get too small on smaller screens */
             height: 400px;
             background-color: #474dc3;
             border-radius: 10px;
@@ -65,7 +72,6 @@
             overflow: hidden;
             perspective: 1000px;
             transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            margin: 10px;
         }
         .card img {
             width: 100%;
@@ -110,6 +116,18 @@
             color: #ffffff;
             line-height: 1.4;
         }
+
+        /* Video Section Styles */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+        .video-container video {
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -124,6 +142,9 @@
     <a href="#creatures">Mythical Creatures</a>
     <a href="#legends">Famous Legends</a>
     <a href="#about">About</a>
+    <a href="#video">Video</a>
+    <a href="#reference">Reference</a>
+     <!-- Add link to video section -->
 </nav>
 
 <main>
@@ -163,6 +184,34 @@
                     <p class="card__description">A supreme deity in Kapampangan mythology, said to govern both the heavens and earth.</p>
                 </div>
             </div>
+
+            <div class="card">
+                <img src="pictures/idalon.jpg" alt="Idalon">
+                <div class="card__content">
+                    <p class="card__title">Idalon</p>
+                    <p class="card__description">A deity of the Ifugao people, Idalon is known for his wisdom and guidance in times of war.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="pictures/sumagang.jpg" alt="Sumagang">
+                <div class="card__content">
+                    <p class="card__title">Sumagang</p>
+                    <p class="card__description">The god of the seas and protector of fishermen in the Visayan region, Sumagang is invoked for safe travels over the water.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Video Section -->
+    <section id="video">
+        <h2>Filipino Folklore Video</h2>
+        <p>Watch this video to learn more about Filipino folklore and mythology:</p>
+        <div class="video-container">
+            <video controls>
+                <source src="ANG MITOLOHIYANG FILIPINO.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </section>
 
@@ -172,7 +221,7 @@
         
         <div class="image-container">
             <div class="card">
-                <img src="pictures/davad.jpg" alt="Aswang">
+                <img src="pictures/aswang.webp" alt="Aswang">
                 <div class="card__content">
                     <p class="card__title">Aswang</p>
                     <p class="card__description">A shape-shifting monster known for its ability to suck blood, often associated with witches and vampires.</p>
@@ -192,6 +241,22 @@
                 <div class="card__content">
                     <p class="card__title">Manananggal</p>
                     <p class="card__description">A creature with the ability to separate its upper body from its lower half, usually depicted as a woman who flies at night to prey on victims.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="pictures/tikbalang.jpg" alt="Tikbalang">
+                <div class="card__content">
+                    <p class="card__title">Tikbalang</p>
+                    <p class="card__description">A half-horse, half-human creature that leads travelers astray in the forests of the Philippines.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="pictures/engkantos.jpg" alt="Engkantos">
+                <div class="card__content">
+                    <p class="card__title">Engkanto</p>
+                    <p class="card__description">A type of supernatural being known for their beauty and mystical powers. Engkantos are often benevolent but can be mischievous if offended.</p>
                 </div>
             </div>
         </div>
@@ -217,19 +282,34 @@
                     <p class="card__description">A folktale explaining how the pineapple fruit got its appearance, stemming from a daughter's disobedience and a mother's curse.</p>
                 </div>
             </div>
+
+            <div class="card">
+                <img src="pictures/legend_of_the_sun_and_moon.jpg" alt="Legend of the Sun and Moon">
+                <div class="card__content">
+                    <p class="card__title">The Legend of the Sun and Moon</p>
+                    <p class="card__description">A story of the rivalry between the sun and moon, explaining their daily journey across the sky and the balance between light and darkness.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="pictures/legend_of_banaue_rice_terraces.jpg" alt="Legend of Banaue Rice Terraces">
+                <div class="card__content">
+                    <p class="card__title">The Legend of Banaue Rice Terraces</p>
+                    <p class="card__description">A tale that explains the origin of the Banaue Rice Terraces, said to be built by a divine couple, showcasing the harmony between nature and humanity.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="about">
         <h2>About Filipino Folklore and Mythology</h2>
-        <p>Filipino folklore and mythology come from various regions in the Philippines, and they play a vital role in the culture and traditions of the Filipino people. These stories, passed down through generations, offer insights into Filipino beliefs, moral values, and the relationship between humans and the supernatural.</p>
-        <p>From ancient deities and mythical creatures to epic legends, Filipino mythology is an essential part of the nation's identity and cultural heritage.</p>
+        <p>Filipino folklore and mythology come from various regions in the Philippines. They blend indigenous beliefs, colonial influences, and stories passed down through generations. From the gods and goddesses of pre-colonial societies to the magical creatures that inhabit the forests and seas, these stories provide a glimpse into the rich cultural heritage of the Filipino people.</p>
     </section>
 </main>
 
 <footer>
-    <p>&copy; 2025 Filipino Folklore and Mythology. All Rights Reserved.</p>
+    <p>&copy; 2025 Filipino Folklore and Mythology. All rights reserved.</p>
 </footer>
 
 </body>
-</html>
+</html> 
